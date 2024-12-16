@@ -61,16 +61,27 @@ print("First conference: ", ncaaConf1)
 print("Second conference: " + ncaaConf2 + "\n")
 
 goBig = input("Do you want to go big? (y/n): ")
+print()
 
 if goBig == "y":
     ncaaConf = random.choice(list(ncaaTeams.keys()))
     print("Your conference: ", ncaaConf)
+
+    print()
     ncaaTeam1, ncaaTeam2 = random.sample(ncaaTeams[ncaaConf], 2)
     print("First team: ", ncaaTeam1)
-    print("Second team: ", ncaaTeam2)
+    print("Second team: " + ncaaTeam2 + "\n")
+    teamChoice = input("Enter 1 or 2: ")
+    selectedTeam = ncaaTeam1 if teamChoice == "1" else ncaaTeam2
+    print()
+    print("Your team: ", selectedTeam)
 else:
-    choice = input("Enter 1 or 2: ")
-    selectedConference = ncaaConf1 if choice == "1" else ncaaConf2
+    conferenceChoice = input("Enter 1 or 2: ")
+    selectedConference = ncaaConf1 if conferenceChoice == "1" else ncaaConf2
     ncaaTeam1, ncaaTeam2 = random.sample(ncaaTeams[selectedConference], 2)
     print("First team: ", ncaaTeam1)
-    print("Second team: ", ncaaTeam2)
+    print("Second team: " + ncaaTeam2 + "\n")
+    teamChoice = input("Enter 1 or 2: ")
+    selectedTeam = ncaaTeam1 if teamChoice == "1" else ncaaTeam2
+    print()
+    print("Your team: ", selectedTeam)
