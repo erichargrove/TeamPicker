@@ -1,4 +1,5 @@
 import random
+import sys
 from colorama import init, Fore
 
 init()
@@ -60,10 +61,10 @@ ncaaConf1, ncaaConf2 = random.sample(list(ncaaTeams.keys()), 2)
 print("First conference: ", ncaaConf1)
 print("Second conference: " + ncaaConf2 + "\n")
 
-goBig = input("Do you want to go big? (y/n): ")
+goBigConference = input("Do you want to go big? (y/n): ")
 print()
 
-if goBig == "y":
+if goBigConference == "y":
     ncaaConf = random.choice(list(ncaaTeams.keys()))
     print("Your conference: ", ncaaConf)
 
@@ -71,6 +72,12 @@ if goBig == "y":
     ncaaTeam1, ncaaTeam2 = random.sample(ncaaTeams[ncaaConf], 2)
     print("First team: ", ncaaTeam1)
     print("Second team: " + ncaaTeam2 + "\n")
+    goBigTeam = input("Do you want to go big? (y/n): ")
+    print()
+    if goBigTeam == "y":
+        selectedTeam = random.choice(ncaaTeams[ncaaConf])
+        print("Your team: ", selectedTeam)
+        sys.exit()
     teamChoice = input("Enter 1 or 2: ")
     selectedTeam = ncaaTeam1 if teamChoice == "1" else ncaaTeam2
     print()
@@ -81,6 +88,12 @@ else:
     ncaaTeam1, ncaaTeam2 = random.sample(ncaaTeams[selectedConference], 2)
     print("First team: ", ncaaTeam1)
     print("Second team: " + ncaaTeam2 + "\n")
+    goBigTeam = input("Do you want to go big? (y/n): ")
+    print()
+    if goBigTeam == "y":
+        selectedTeam = random.choice(ncaaTeams[selectedConference])
+        print("Your team: ", selectedTeam)
+        sys.exit()
     teamChoice = input("Enter 1 or 2: ")
     selectedTeam = ncaaTeam1 if teamChoice == "1" else ncaaTeam2
     print()
