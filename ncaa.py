@@ -58,8 +58,8 @@ def runNCAA():
     }
 
     ncaaConf1, ncaaConf2 = random.sample(list(ncaaTeams.keys()), 2)
-    print("First conference: ", ncaaConf1)
-    print("Second conference: " + ncaaConf2 + "\n")
+    print("1. " + ncaaConf1)
+    print("2. " + ncaaConf2 + "\n")
 
     goBigConference = input("Do you want to go big? (y/n): ")
     print()
@@ -70,13 +70,13 @@ def runNCAA():
 
         print()
         ncaaTeam1, ncaaTeam2 = random.sample(ncaaTeams[ncaaConf], 2)
-        print("First team: ", ncaaTeam1)
-        print("Second team: " + ncaaTeam2 + "\n")
+        print("1. " + ncaaTeam1)
+        print("2. " + ncaaTeam2 + "\n")
         goBigTeam = input("Do you want to go big? (y/n): ")
         print()
         if goBigTeam == "y":
             selectedTeam = random.choice(ncaaTeams[ncaaConf])
-            print("Your team: ", selectedTeam)
+            print("Your team: " + selectedTeam)
             sys.exit()
         teamChoice = input("Enter 1 or 2: ")
         selectedTeam = ncaaTeam1 if teamChoice == "1" else ncaaTeam2
@@ -87,8 +87,8 @@ def runNCAA():
         print()
         selectedConference = ncaaConf1 if conferenceChoice == "1" else ncaaConf2
         ncaaTeam1, ncaaTeam2 = random.sample(ncaaTeams[selectedConference], 2)
-        print("First team: ", ncaaTeam1)
-        print("Second team: " + ncaaTeam2 + "\n")
+        print("1. " + ncaaTeam1)
+        print("2. " + ncaaTeam2 + "\n")
         goBigTeam = input("Do you want to go big? (y/n): ")
         print()
         if goBigTeam == "y":
@@ -98,4 +98,4 @@ def runNCAA():
         teamChoice = input("Enter 1 or 2: ")
         selectedTeam = ncaaTeam1 if teamChoice == "1" else ncaaTeam2
         print()
-        print("Your team: ", selectedTeam)
+        print("Your team: " + selectedTeam)
