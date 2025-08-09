@@ -19,9 +19,9 @@ leagueChoice = input("Choose a league: ").lower()
 if leagueChoice == "1" or leagueChoice == "ncaa":
     print()
     ncaa.runNCAA()
-if leagueChoice == "2" or leagueChoice == "mlb":
+elif leagueChoice == "2" or leagueChoice == "mlb":
     mlb.runMLB()
-if leagueChoice == "3" or leagueChoice == "nba":
+elif leagueChoice == "3" or leagueChoice == "nba":
     nba.runNBA()
 else:
     print("Not an option")
