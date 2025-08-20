@@ -46,6 +46,8 @@ def runMLB():
         "San Francisco Giants"
     ]
 
+    teamChoices = []
+
     for i in range(2):
         mlbTeam1, mlbTeam2 = random.sample(mlbTeams, 2)
         print("1. " + mlbTeam1)
@@ -66,4 +68,7 @@ def runMLB():
                 break
             else:
                 print("Invalid input.")
+        teamChoices.append(teamChoice)
         i += 1
+
+    print("Matchup: " + teamChoices[0] + " vs. " + teamChoices[1])
